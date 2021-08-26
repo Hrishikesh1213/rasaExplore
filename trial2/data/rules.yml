@@ -1,0 +1,45 @@
+version: "2.0"
+
+rules:
+
+- rule: Say return greet anytime the user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: get the post
+  steps:
+  - intent: get_post
+  - action: action_get_post
+
+- rule: Activate form
+  steps:
+  - intent: request_restaurant
+  - action: utter_ask_order
+  - action: restaurant_form
+  - active_loop: restaurant_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: restaurant_form
+  steps:
+  # Form is deactivated
+  - action: restaurant_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_make_the_post

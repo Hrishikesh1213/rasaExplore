@@ -1,0 +1,104 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_lower_stress
+  - ask_eat_healthy
+  - ask_exercise
+  - inform
+  - out_of_scope
+
+slots:
+  confirm_exercise:
+    type: unfeaturized
+  exercise:
+    type: unfeaturized
+  sleep:
+    type: unfeaturized
+  diet:
+    type: unfeaturized
+  stress:
+    type: unfeaturized
+  goal:
+    type: unfeaturized
+
+entities:
+  - exercise
+  - sleep
+  - stress
+
+responses:
+  utter_greet:
+  - text: "It's time for your daily wellness check. It's a great way tp track your progress."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_lower_stress_info:
+  - text: "Expand your stress management toolkit by mastering these four strategies for coping with stress: avoid, alter, accept and adapt. This website might help you 'https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress-relief/art-20044476'."
+
+  utter_eat_healthy_info:
+  - text: "Emphasizes fruits, vegetables, whole grains, and fat-free or low-fat milk and milk products. Includes a variety of protein foods such as seafood, lean meats and poultry, eggs, legumes (beans and peas), soy products, nuts, and seeds. Is low in saturated fats, trans fats, cholesterol, salt (sodium), and added sugars."
+
+  utter_exercise_info:
+  - text: "Adults should aim to: do strengthening activities that work all the major muscle groups (legs, hips, back, abdomen, chest, shoulders and arms) on at least 2 days a week. do at least 150 minutes of moderate intensity activity a week or 75 minutes of vigorous intensity activity a week."
+  
+  utter_ask_exercise_conformation:
+  - text: "Did you exercise yesterday?"
+
+  utter_ask_exercise:
+  - text: "What type of exercise did you do?" 
+
+  utter_ask_sleep:
+  - text: "How much sleep did you get last night?"
+
+  utter_ask_diet:
+  - text: "did you stick to healthy diet yesterday?"
+
+  utter_ask_stress:
+  - text: "Is your stress level low, medium or high?"
+
+  utter_ask_goal:
+  - text: "what do you want to accomplish today?"
+
+  utter_slot_information:
+  - text: "Here's your wellness log\n
+            - Exercisied?: {confirm_exercise}\n
+            - Type of exercise: {exercise}\n
+            - Sleep: {sleep}\n
+            - Stuck to a helathy diet?: {diet}\n
+            - Stress level: {stress}\n
+            - Goal for the day: {goal}"
+
+  utter_no_worries:
+  - text: "no problem. chill :)"
+
+  utter_ask_continue:
+  - text: "Sorry I didn't quite understand. Do you want to continue?"
+
+forms:
+  health_form:
+    
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

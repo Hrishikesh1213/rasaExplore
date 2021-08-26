@@ -1,0 +1,29 @@
+version: "2.0"
+
+stories:
+
+- story: happy form path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_restaurant
+  - action: utter_ask_order
+  - action: restaurant_form
+  - slot_was_set:
+    - num_people: 2
+    - cuisine: pasta
+  - active_loop: restaurant_form
+  
+- story: get the post
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_post
+  - action: action_get_post
+
+- story: no form path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_goodbye

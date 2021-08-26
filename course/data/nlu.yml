@@ -1,0 +1,191 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - ok
+    - why not
+    - ok great
+    - cool
+    - fine
+    - you bet
+    - more or less
+    - I sure do
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - none
+    - absolutely not
+    - no thanks
+    - didn't do any
+    - no I didn't
+    - could have been better
+    - not great
+    - nope
+
+- intent: inform
+  examples: |
+    - a full [8 hours](sleep)
+    - only [four hours](sleep)
+    - only [6 hours](sleep)
+    - [low](stress)
+    - [medium](stress)
+    - [high](stress)
+    - yes I went for a [run](exercise)
+    - yes I hit the [gym](exercise)
+    - I just had a [stroll](exercise) by the side of road
+    - an hour of [yoga](exercise)
+    - gone for [hike](exercise)
+    - took dog for [walk](exercise)
+    - played [badminton](exercise)
+    - did [boxing](exercise)
+    - [rock climbing](exercise)
+    - played [basketball](exercise)
+    - went for [swimming](exercise)
+    - did [workout](exercise)
+    - I want to getup early and go for a run
+    - Be more patient with my family
+    - be a good friend
+    - Eat better tomorrow
+    - lessjunk food
+    - spend lesstime on my phone
+    - dont procastinate
+    - go to bed earlier
+    - don't stay up late
+    - wake up early
+    - try to eat healthy
+    - lots of fruits and veggies
+    - drink lot of water
+    - get more exercise
+
+- intent: out_of_scope
+  examples: |
+    - That's not what i wanted to do
+    - wait stop
+    - you are of no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizzA
+    - tell me weather
+    - this is not working
+    - i alredy told you that
+    - i will not tell you that
+    - dont like that
+    - I dont want to tell you that
+    - that is none of your bussiness
+    - thats not right
+    - stop asking that
+    - never mind
+    - i dont want to answer that
+    - i want to do something else
+    - i changed my mind
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: ask_lower_stress
+  examples: |
+    - What do I do if iam stressed?
+    - How can i lower my stress level?
+    - what are some good ways to lower stress?
+    - what are some good ways to relax?
+    - what are some things that i can do to lower my stress?
+
+- intent: ask_eat_healthy
+  examples: |
+    - What is considered healthy diet?
+    - What is considered good diet?
+    - how do i follow a good diet?
+    - what is an example of healthy diet?
+    - How doi eat healthy?
+
+- intent: ask_exercise
+  examples: |
+    - What is good amount of exercise?
+    - How much exercise should i be getting?
+    - How much exercise is recommended?
+    - is walking once a day enough?
+    - How much exercise should i do everyday?
+    - How many times per week should i go to gym?
