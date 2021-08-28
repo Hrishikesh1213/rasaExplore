@@ -1,79 +1,77 @@
-version: "2.0"
-
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - inform
-  - request_restaurant
-  - get_post
-
-actions:
-  - action_get_post
-  - action_make_the_post
-
+- request_restaurant
+- inform
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- get_post
+entities:
+- cuisine
+- num_people
+- slot_number
+slots:
+  cuisine:
+    type: text
+    influence_conversation: true
+  num_people:
+    type: float
+    influence_conversation: true
+    max_value: 10.0
+    min_value: 1.0
+  slot_number:
+    type: float
+    influence_conversation: true
+    max_value: 100.0
+    min_value: 1.0
 responses:
   utter_greet:
-  - text: "Hey! How can I help you?"
-
+  - text: Hey! How can I help you?
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
   utter_ask_order:
-  - text: "What would you like to order?"
-
+  - text: What would you like to order?
   utter_submit:
-  - text: "Thank you, your order has been submitted successfully."
-
+  - text: Thank you, your order has been submitted successfully.
   utter_slots_values:
-  - text: "You ordered {cuisine} X {num_people}."
-
-
-entities:
-  - cuisine
-  - num_people
-
+  - text: You ordered {cuisine} X {num_people}.
+  utter_ask_post_number:
+  - text: Which post do you wish to see?
+actions:
+- action_get_post
+- action_post_data
+- utter_ask_order
+- utter_greet
+- utter_slots_values
+- utter_submit
 forms:
   restaurant_form:
-    ignored_intents: 
+    ignored_intents:
     - greet
     - goodbye
     - mood_great
     - mood_unhappy
     - bot_challenge
     required_slots:
-        cuisine:
-          - type: from_entity
-            entity: cuisine
-        num_people:
-          - type: from_entity
-            entity: num_people
-
-slots:
-  cuisine:
-    type: text
-  num_people:
-    type: float
-    min_value: 1.0
-    max_value: 10.0
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+      cuisine:
+      - type: from_entity
+        entity: cuisine
+      num_people:
+      - type: from_entity
+        entity: num_people

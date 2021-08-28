@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +36,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -49,7 +45,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -66,7 +61,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -83,14 +77,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: request_restaurant
   examples: |
     - I want to book a resturant
@@ -100,21 +92,22 @@ nlu:
     - I want to have a reservation at the resturant
     - I want to reserve the tables
     - I want to reserve the tables at the resturant
-
+    - i like to have a reservation
 - intent: inform
   examples: |
     - I want to have [pizza](cuisine) for [3](num_people)
-    - I want to have [cheese cake](cuisine) for [4](num_people) members
+    - I like to have [cheese cake](cuisine) for [4](num_people) members
     - I want to have [pasta](cuisine) for [2](num_people) people
-    - I want to have [tacos](cuisine) for [three](num_people) people
+    - I like to have [tacos](cuisine) for [three](num_people) people
     - I want to have [chicken sandwich](cuisine) for [one](num_people) member
-    - I want to have [salad](cuisine) for [ten](num_people) members
-
+    - I like to have [salad](cuisine) for [ten](num_people) members
+    - we want [biryani](cuisine) for [3](num_people)
 - intent: get_post
   examples: |
-    - get the post
-    - show me the post
-    - take me to the post
-    - I want to see the post
-    - please take me to the post
-    - can you show me the post
+    - get the [1](slot_number)st post
+    - show me the [first](slot_number) post
+    - take me to the [4](slot_number) post
+    - I want to see the post number [87](slot_number)
+    - please take me to the [66](slot_number) post
+    - can you show me the [47](slot_number) post
+    - get me the [77](slot_number) post

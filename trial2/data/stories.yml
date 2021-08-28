@@ -2,7 +2,7 @@ version: "2.0"
 
 stories:
 
-- story: happy form path 1
+- story: happy resturanat form path 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -13,6 +13,12 @@ stories:
     - num_people: 2
     - cuisine: pasta
   - active_loop: restaurant_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_post_data
   
 - story: get the post
   steps:
@@ -20,10 +26,17 @@ stories:
   - action: utter_greet
   - intent: get_post
   - action: action_get_post
+  - slot_was_set:
+    - slot_number: 1
+
+# - rule: get the post
+#   steps:
+#   - intent: get_post
+#   - action: action_get_post
 
 - story: no form path 1
   steps:
   - intent: greet
   - action: utter_greet
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_goodbyera
