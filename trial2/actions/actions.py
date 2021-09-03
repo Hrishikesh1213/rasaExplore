@@ -27,6 +27,7 @@ class ActionHelloWorld(Action):
         cuisine = tracker.get_slot('cuisine')
         num_people = tracker.get_slot('num_people')
         # slot_number = tracker.get_slot('slot_number')
+        phn_number = tracker.sender_id
 
         # account_sid = "AC90e2d0be773c5e1eb80153cfe65b7221"
         # auth_token =  "3af6d18255b49d61a6a83a070430681f"
@@ -39,7 +40,8 @@ class ActionHelloWorld(Action):
 
         dataobj = {
             'cuisine': cuisine,
-            'num_people': num_people
+            'num_people': num_people,
+            'key': phn_number
         }
         z = requests.post('http://127.0.0.1:1880/server1', data = dataobj)
         # x = requests.get(URL).json()
